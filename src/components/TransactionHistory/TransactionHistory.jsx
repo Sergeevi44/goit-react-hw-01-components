@@ -1,6 +1,6 @@
+import { Box } from 'components/App/Box';
 import PropTypes from 'prop-types';
 import {
-  TransactionTable,
   Header,
   Body,
   TableHeadRow,
@@ -9,7 +9,15 @@ import {
 
 export const TransactionHistory = ({ items }) => {
   return (
-    <TransactionTable>
+    <Box
+      width="100%"
+      mx="auto"
+      border="normal"
+      borderRadius="normal"
+      fontFamily="monospace"
+      fontWeight="bold"
+      as="table"
+    >
       <Header>
         <tr>
           <TableHeadRow>Type</TableHeadRow>
@@ -27,7 +35,7 @@ export const TransactionHistory = ({ items }) => {
           </tr>
         ))}
       </Body>
-    </TransactionTable>
+    </Box>
   );
 };
 TransactionHistory.propTypes = {

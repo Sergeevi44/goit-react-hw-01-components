@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-export const ProfileContainer = styled.div`
-  width: 380px;
-  height: auto;
-
-  margin-left: auto;
-  margin-right: auto;
-`;
 export const Description = styled.div`
   background-color: ${p => p.theme.colors.muted};
   margin-left: auto;

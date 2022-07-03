@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-export const StatisticsSection = styled.section`
-  display: flex;
-  justify-content: center;
-`;
 export const Title = styled.h2``;
 export const StatList = styled.ul`
   display: flex;
@@ -12,12 +8,12 @@ export const StatList = styled.ul`
   padding: 0;
 `;
 export const Item = styled.li`
-  background-color: #${p => p.theme.colors.randomColor};
   list-style: none;
   display: flex;
   width: 25%;
   flex-direction: column;
   align-items: center;
+  background-color: ${p => p.color};
 
   font-family: ${p => p.theme.fonts.heading};
   font-weight: ${p => p.theme.fontWeights.bold};

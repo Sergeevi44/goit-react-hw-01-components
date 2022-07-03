@@ -1,6 +1,5 @@
 export const theme = {
   colors: {
-    randomColor: Math.floor(Math.random() * 16777215).toString(16),
     text: '#000',
     background: '#fff',
     primary: '#07c',

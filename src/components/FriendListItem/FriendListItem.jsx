@@ -1,13 +1,22 @@
+import { Box } from 'components/App/Box';
 import PropTypes from 'prop-types';
-import { Item, Status, Avatar, Name } from './FriendListItem.styled';
+import { Status, Avatar, Name } from './FriendListItem.styled';
 
 export const FriendListItem = ({ avatar, name, isOnline }) => {
   return (
-    <Item>
+    <Box
+      width="380px"
+      mb="2px"
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      border="normal"
+      as="li"
+    >
       <Status isOnline={isOnline}></Status>
       <Avatar src={avatar} alt={name} width="48" />
       <Name>{name}</Name>
-    </Item>
+    </Box>
   );
 };
 FriendListItem.propTypes = {
