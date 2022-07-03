@@ -1,4 +1,6 @@
+import { theme } from 'components/constants/theme';
 import PropTypes from 'prop-types';
+import { backgroundColor } from 'styled-system';
 import {
   StatisticsSection,
   Title,
@@ -17,7 +19,7 @@ export const Statistics = ({ title, stats }) => {
         {stats.map(stat => (
           <Item key={stat.id}>
             <Label>{stat.label}</Label>
-            <Percentage>{stat.percentage}</Percentage>
+            <Percentage>{stat.percentage}%</Percentage>
           </Item>
         ))}
       </StatList>
