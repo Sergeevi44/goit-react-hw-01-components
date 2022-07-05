@@ -9,10 +9,10 @@ export const Statistics = ({ title, stats }) => {
       {title && <Title>{title}</Title>}
 
       <StatList>
-        {stats.map(stat => (
-          <Item key={stat.id} color={getRandomColor()}>
-            <Label>{stat.label}</Label>
-            <Percentage>{stat.percentage}%</Percentage>
+        {stats.map(({ id, label, percentage }) => (
+          <Item key={id} color={getRandomColor()}>
+            <Label>{label}</Label>
+            <Percentage>{percentage}%</Percentage>
           </Item>
         ))}
       </StatList>
@@ -21,5 +21,11 @@ export const Statistics = ({ title, stats }) => {
 };
 Statistics.propTypes = {
   title: PropTypes.string,
-  stats: PropTypes.arrayOf(PropTypes.object).isRequired,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };

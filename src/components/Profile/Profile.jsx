@@ -11,7 +11,13 @@ import {
   Quantity,
 } from './Profile.styled';
 import { Box } from 'components/App/Box';
-export const Profile = ({ username, tag, location, avatar, stats }) => {
+export const Profile = ({
+  username,
+  tag,
+  location,
+  avatar,
+  stats: { followers, views, likes },
+}) => {
   return (
     <Box width="380px" height="auto" mx="auto">
       <Description>
@@ -24,15 +30,15 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
       <Stats>
         <StatsItem>
           <Label>Followers</Label>
-          <Quantity>{stats.followers}</Quantity>
+          <Quantity>{followers}</Quantity>
         </StatsItem>
         <StatsItem>
           <Label>Views</Label>
-          <Quantity>{stats.views}</Quantity>
+          <Quantity>{views}</Quantity>
         </StatsItem>
         <StatsItem>
           <Label>Likes</Label>
-          <Quantity>{stats.likes}</Quantity>
+          <Quantity>{likes}</Quantity>
         </StatsItem>
       </Stats>
     </Box>
@@ -44,5 +50,5 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   avatar: PropTypes.string.isRequired,
-  stats: PropTypes.object.isRequired,
+  stats: PropTypes.objectOf(PropTypes.number).isRequired,
 };

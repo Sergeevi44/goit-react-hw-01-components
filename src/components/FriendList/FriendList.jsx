@@ -14,18 +14,26 @@ export const FriendList = ({ friends }) => {
       fontWeight="bold"
       fontSize="m"
       color="text"
+      as="ul"
     >
-      {friends.map(friend => (
+      {friends.map(({ id, avatar, name, isOnline }) => (
         <FriendListItem
-          key={friend.id}
-          avatar={friend.avatar}
-          name={friend.name}
-          isOnline={friend.isOnline}
+          key={id}
+          avatar={avatar}
+          name={name}
+          isOnline={isOnline}
         />
       ))}
     </Box>
   );
 };
 FriendList.propTypes = {
-  friends: PropTypes.arrayOf(PropTypes.object).isRequired,
+  friends: PropTypes.arrayOf(
+    PropTypes.shape({
+      avatar: PropTypes.string,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      id: PropTypes.number.isRequired,
+    })
+  ).isRequired,
 };
