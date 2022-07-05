@@ -8,13 +8,13 @@ export const FriendList = ({ friends }) => {
       display="flex"
       alignItems="center"
       flexDirection="column"
-      p="space[0]"
-      m="space[0]"
+      m="0"
       fontFamily="monospace"
       fontWeight="bold"
       fontSize="m"
       color="text"
       as="ul"
+      p="0"
     >
       {friends.map(({ id, avatar, name, isOnline }) => (
         <FriendListItem
